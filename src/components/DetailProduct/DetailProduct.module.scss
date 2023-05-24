@@ -9,9 +9,14 @@
   .product {
     // background-color: rgba(233, 234, 234, 0.344);
     .title {
-      padding: 10px;
-      text-align: center;
-      text-transform: capitalize;
+      .name_extend {
+        text-transform: uppercase;
+      }
+
+      .price {
+        display: flex;
+        justify-content: space-between;
+      }
     }
     .description {
       background-color: white;
@@ -63,8 +68,6 @@
 
     h5 {
       font-size: 14px;
-      font-weight: 400;
-      text-transform: uppercase;
     }
 
     h6 {

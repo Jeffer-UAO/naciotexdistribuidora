@@ -14,22 +14,28 @@ export function DetailProduct(props) {
     setProductData(product[0]);
   }, []);
 
-  const changeDetail = (data) => {  
-    setProductData(data);    
+  const changeDetail = (data) => {
+    setProductData(data);
     window.scrollTo(0, 0);
   };
 
   if (product) {
     return (
-      <div className={styles.detailProduct} >
+      <div className={styles.detailProduct}>
         <div className={styles.product} id="seccion-1">
-          
           <CardImg alt="Card image cap" src={BASE_NAME + productData.images} />
 
           <div className={styles.description}>
             <CardTitle className={styles.title}>
-              <h5>{productData.name_extend}</h5>
-              {productData.price1 !== null && <h6>$ {productData.price1}</h6>}
+              <h5 className={styles.name_extend} >{productData.name_extend}</h5>
+              <div className={styles.price}>
+                {productData.price2 > 0 && (
+                  <h6>Por mayor $ {productData.price2}</h6>
+                )}
+                {productData.price1 > 0 && (
+                  <h6>Al detal $ {productData.price1}</h6>
+                )}
+              </div>
             </CardTitle>
             <p>{productData.description}</p>
 
@@ -47,7 +53,6 @@ export function DetailProduct(props) {
                 }
               />
             </div>
-            
           </div>
         </div>
 
@@ -78,7 +83,6 @@ export function DetailProduct(props) {
             ))}
           </div>
         </div>
-      
       </div>
     );
   } else {

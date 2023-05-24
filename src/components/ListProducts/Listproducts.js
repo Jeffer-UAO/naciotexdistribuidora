@@ -27,11 +27,15 @@ export function Listproducts(props) {
                   <h5>{product.productData.name_extend}</h5>
                 </CardTitle>
 
-                <div className={styles.title}>
+                <div className={styles.price}>
                   <CardSubtitle>
-                    {product.productData.price1 !== null && (
-                      <h5> $ {product.productData.price1}</h5>
+                  {product.productData.price2 > 0 && (
+                      <h6>Por mayor $ {product.productData.price2}</h6>
                     )}
+                    {product.productData.price1 > 0 && (
+                      <h6>Al detal $ {product.productData.price1}</h6>
+                    )}
+                    
                   </CardSubtitle>
 
                   <div>
