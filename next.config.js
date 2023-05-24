@@ -1,21 +1,13 @@
-// const withPlugins = require('next-compose-plugins');
-// const withNextBoost = require('next-boost');
-// const withImages = require('next-images');
-
-// module.exports = withPlugins([
-//   [withNextBoost],
-//   [withImages],
-// ], {
-//   reactStrictMode: true,
-//   // Otras configuraciones de Next.js aquí...
-// });
-
-
-/**
- * @type {import('next').NextConfig}
- */
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  sw: 'sw.js',
+})
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  reactStrictMode: true
 }
 
-module.exports = nextConfig
+module.exports = withPWA(nextConfig)
+
