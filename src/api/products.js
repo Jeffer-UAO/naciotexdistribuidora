@@ -16,6 +16,20 @@ export class Products {
     }
   }
 
+  async getProductById(productId) {
+    try {
+      const url = `${BASE_API}/api/products/${productId}/`;
+      const response = await fetch(url);
+      const result = await response.json();
+
+      if (response.status !== 200) throw result;
+
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async getProductsByCategory(idCategory) {
     try {
       const productsFilter = `category=${idCategory}`;

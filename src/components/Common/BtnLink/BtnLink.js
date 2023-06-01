@@ -15,16 +15,18 @@ export function BtnLink(props) {
   const updateState = () => setIsLoading(!isLoading);
 
   return (
-    <div className={styles.btnlink}>
-      <Button
-        onClick={handleClick}
-        onFocus={updateState}
-        onBlur={updateState}
-        onChange={updateState}
-      >
-        {logo}
-        {/* {title} */}
-      </Button>
-    </div>
+    <>
+      <div className={styles.btnlink}>
+        <Button
+          onClick={handleClick}
+          onFocus={updateState}
+          onBlur={updateState}
+          onChange={updateState}
+        >
+          {logo}
+          {/* {title} */}
+        </Button>
+      </div>
+    </>
   );
 }

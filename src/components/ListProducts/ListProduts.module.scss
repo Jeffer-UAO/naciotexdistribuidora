@@ -8,8 +8,14 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-
   background-color: rgb(241, 241, 241);
+
+  button{
+    width: 100% !important;
+    background-color: #ffd814;
+    border: none;
+    color: black;
+  }
 
   &__product {
     background-color: rgb(255, 255, 255);
