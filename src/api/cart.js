@@ -62,6 +62,11 @@ export class Cart {
     }
   }
 
+  deleteAll(){
+    localStorage.removeItem(CART);
+  }
+
+
   count() {
     let count = 0;
     const response = this.getAll();

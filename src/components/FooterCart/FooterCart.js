@@ -12,13 +12,21 @@ import { useCart } from "@/hooks/useCart";
 
 export function FooterCart(props) {
   const { product } = props;
-  const { total } = useCart();
+  const { deleteAllCart } = useCart();
   const router = useRouter();
 
   
 
   function handleClick(link) {
     router.push(link);
+  }
+
+
+  function confirmation() {
+    const result = window.confirm('¿Está seguro de eliminar los productos del Carrito?');
+    if (result) {
+      deleteAllCart();
+    } 
   }
 
   const generateWhatsAppLink = (phoneNumber, message) => {
@@ -51,7 +59,7 @@ export function FooterCart(props) {
           </div>
           <p>Enviar Listado</p>
         </a>
-        <BsTrash3 size="25" color="grey" />
+        <BsTrash3 size="25" color="grey" onClick={confirmation} />
       </div>
     </div>
   );

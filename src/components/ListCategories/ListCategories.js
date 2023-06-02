@@ -10,7 +10,9 @@ export function ListCategories(props) {
 
   return (
     <div>
+      
       <div className={styles.content}>
+      <h4>CATEGORÍAS</h4>
         <div className={styles.list}>
           {map(categories, (category) => (
             <div key={category.id} className={styles.card}>

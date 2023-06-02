@@ -50,10 +50,18 @@ export function CartProvider(props) {
   };
 
 
+  const deleteAllCart = () => { 
+    setLoading(true);
+    cartCtrl.deleteAll();
+    refreshTotalCart();
+    setLoading(false);    
+  };
+
   const refreshTotalCart = () => {
     setTotal(cartCtrl.count());
     setCart(cartCtrl.getAll());
   };
+
 
   
 
@@ -65,6 +73,7 @@ export function CartProvider(props) {
     decreaseCart,
     incrementCart,
     deleteCart,   
+    deleteAllCart,
   };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
