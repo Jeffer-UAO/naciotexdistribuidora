@@ -4,6 +4,8 @@
   img {
     object-fit: cover;
     object-position: center center;
+    aspect-ratio: 1/1;
+    height: 28rem;
   }
 
   .product {
@@ -64,6 +66,7 @@
       height: 9rem;
       object-fit: cover;
       object-position: center center;
+ 
     }
 
     h5 {

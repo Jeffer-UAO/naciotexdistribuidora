@@ -17,8 +17,8 @@
     text-align: center;
     margin: 10px;
   }
-  h4{
-margin: 1rem
+  h4 {
+    margin: 1rem;
   }
 
   .list {
@@ -37,6 +37,7 @@ margin: 1rem
       object-fit: cover;
       object-position: center center;
       border-radius: 5px;
+      aspect-ratio: 1/1;
     }
   }
 }

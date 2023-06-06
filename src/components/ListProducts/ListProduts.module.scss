@@ -44,10 +44,12 @@
 
     img {
       height: 200px;
+      aspect-ratio: 4/3;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
       object-fit: cover;
       object-position: center center;
+     
     }
 
     .title {
