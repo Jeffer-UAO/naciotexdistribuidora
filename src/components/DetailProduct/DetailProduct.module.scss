@@ -7,14 +7,12 @@
     aspect-ratio: 1/1;
     height: 28rem;
   }
-
   .product {
     // background-color: rgba(233, 234, 234, 0.344);
     .title {
       .name_extend {
         text-transform: uppercase;
       }
-
       .price {
         display: flex;
         justify-content: space-between;
