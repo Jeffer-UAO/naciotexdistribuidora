@@ -44,11 +44,15 @@ export function Listproducts(props) {
       <h4>{title}</h4>
       <div className={styles.product}>
         {map(products, (product, index) => (
-          <>        
-            {!product.productData.soldout ? (
-              <Available key={index} product={product} />
-            ) : (
-              <SoldOut kay={index} product={product} />
+          <>
+            {product.productData.active && (
+              <>
+                {!product.productData.soldout ? (
+                  <Available key={index} product={product} />
+                ) : (
+                  <SoldOut kay={index} product={product} />
+                )}
+              </>
             )}
           </>
         ))}
