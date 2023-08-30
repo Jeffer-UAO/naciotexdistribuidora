@@ -1,26 +1,52 @@
-import React from 'react'
+import React, { useState } from "react";
 import { BASE_NAME } from "@/config/constants";
+import { useCart } from "@/hooks/useCart";
 import { WhatsApp } from "@/components/WhatsApp";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
-import { CardImg, CardSubtitle, CardTitle, Button } from "reactstrap";
-
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  FormGroup,
+  Input,
+  CardImg,
+} from "reactstrap";
 import styles from "./Available.module.scss";
 
 export function Available(props) {
-    const { product } = props;
+  const { product } = props;
+  const { addCart, loading } = useCart();
+  const [isOpen, setIsOpen] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [idProduct, setIdPropduct] = useState();
 
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
 
+  const addData = () => {
+    addCart(idProduct, quantity);
+    toast.success("¡Se agrego con exito!");
+    toggleModal();
+  };
 
-    const addProductId = (id) => {
-        setIdPropduct(id);
-        toggleModal();
-      };
+  const handleQuantityChange = (event) => {
+    const value = parseInt(event.target.value);
+    setQuantity(value);
+  };
 
+  const addProductId = (id) => {
+    setIdPropduct(id);
+    toggleModal();
+  };
 
   return (
     <div className={styles.list__product}>
-      <Link href={`/${product.productData.slug}`}>      
+      <Link href={`/${product.productData.slug}`}>
         <CardImg
           alt="Card image cap"
           src={BASE_NAME + product.productData.images}
@@ -60,6 +86,33 @@ export function Available(props) {
       >
         Agregar al Carrito
       </Button>
+
+      <Modal isOpen={isOpen} toggle={toggleModal}>
+        <ModalHeader toggle={toggleModal}>Ingrese Cantidad</ModalHeader>
+
+        <ModalBody>
+          Cantidad
+          <FormGroup>
+            <Input
+              value={quantity}
+              type="number"
+              name="cantidad"
+              id="cantidad"
+              placeholder="Cantidad"
+              onChange={handleQuantityChange}
+            />
+          </FormGroup>
+        </ModalBody>
+
+        <ModalFooter>
+          <Button color="primary" onClick={addData}>
+            Aceptar
+          </Button>{" "}
+          <Button color="secondary" onClick={toggleModal}>
+            Cancelar
+          </Button>
+        </ModalFooter>
+      </Modal>
     </div>
   );
 }
