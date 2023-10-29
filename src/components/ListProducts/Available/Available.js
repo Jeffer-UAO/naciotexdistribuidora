@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BASE_NAME } from "@/config/constants";
 import { useCart } from "@/hooks/useCart";
 import { WhatsApp } from "@/components/WhatsApp";
