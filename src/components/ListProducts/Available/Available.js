@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BASE_NAME } from "@/config/constants";
 import { useCart } from "@/hooks/useCart";
-import { WhatsApp } from "@/components/WhatsApp";
 import Link from "next/link";
 import { toast } from "react-toastify";
 
@@ -19,7 +18,15 @@ import styles from "./Available.module.scss";
 
 export function Available(props) {
   const { product } = props;
-  const { addCart, loading } = useCart();
+
+  const scale = "c_scale,f_auto,q_50,w_400/";
+  const upload = "image/upload/";
+
+  const format = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Cambia 'es-ES' por tu configuración regional
+  };
+
+  const { addCart } = useCart();
   const [isOpen, setIsOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [idProduct, setIdPropduct] = useState();
@@ -47,36 +54,33 @@ export function Available(props) {
   return (
     <div className={styles.list__product}>
       <Link href={`/${product.productData.slug}`}>
-        <CardImg
-          alt="Card image cap"
-          src={BASE_NAME + product.productData.images}
-        />
+        {product.productData.images ? (
+          <CardImg
+            alt="Card image cap"
+            src={
+              BASE_NAME +
+              upload +
+              scale +
+              product.productData.images.split(upload)[1]
+            }
+          />
+        ) : (
+          <CardImg
+            alt="Card image cap"
+            src={product.productData.image_alterna}
+          />
+        )}
       </Link>
 
       <h5>{product.productData.name_extend}</h5>
       <div className={styles.product}>
         <div className={styles.price}>
           {product.productData.price2 > 0 && (
-            <h6>Por mayor $ {product.productData.price2}</h6>
+            <label>Por mayor $ {format(product.productData.price2)}</label>
           )}
           {product.productData.price1 > 0 && (
-            <h6>Al detal $ {product.productData.price1}</h6>
+            <label>Al detal $ {format(product.productData.price1)}</label>
           )}
-        </div>
-
-        <div className={styles.WhatsApp}>
-          <WhatsApp
-            phoneNumber="+573106556056"
-            message={
-              BASE_NAME +
-              product.productData.images +
-              " " +
-              product.productData.name_extend +
-              " " +
-              "Referencia: " +
-              product.productData.ref
-            }
-          />
         </div>
       </div>
 
@@ -87,7 +91,7 @@ export function Available(props) {
         Agregar al Carrito
       </Button>
 
-      <Modal isOpen={isOpen} toggle={toggleModal}>
+      <Modal centered isOpen={isOpen} toggle={toggleModal}>
         <ModalHeader toggle={toggleModal}>Ingrese Cantidad</ModalHeader>
 
         <ModalBody>

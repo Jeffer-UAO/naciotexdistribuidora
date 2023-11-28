@@ -5,10 +5,11 @@ const withPWA = require('next-pwa')({
   sw: 'sw.js',
 })
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 }
 
 module.exports = withPWA(nextConfig)
-

@@ -39,13 +39,14 @@ export default function App(props) {
       <CartProvider>
       <Component {...pageProps} />
         <ToastContainer          
-          autoClose={2000}      
+          autoClose={1000}      
           newestOnTop
           closeOnClick
           rtl={false}
           pauseOnFocusLoss
           draggable
           pauseOnHover={false}
+          hideProgressBar={true}
         />
         
 

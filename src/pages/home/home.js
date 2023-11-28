@@ -4,8 +4,6 @@ import { Products } from "@/api/products";
 import {
   ListCategories,
   Footer,
-  Promotion,
-  Exclusive,
   FooterApp,
   Separator,
 } from "@/components";
@@ -30,29 +28,26 @@ export default function HomePage() {
     })();
   }, []);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await productsCtrl.getProductByOfertAndExclusive();
-        setProducts(response);
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await productsCtrl.getProductByOfertAndExclusive();
+  //       setProducts(response);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   })();
+  // }, []);
 
-  if (products !== null) {
+  if (categories !== null) {
     return (
       <>
         <BasicLayout>
           <Separator />
           <Separator />
           <ListCategories categories={categories} />
-
-          <Promotion products={products} />
-          <hr />
-          <Exclusive products={products} />
-
+          {/* <Promotion products={products} /> 
+          <Exclusive products={products} /> */}
           <FooterApp />
           <Footer />
         </BasicLayout>
@@ -62,9 +57,7 @@ export default function HomePage() {
     return (
       <>
         <BasicLayout>
-          <ListCategories categories={categories} />
-          <FooterApp />
-          <Footer />
+          <p>Cargando...</p>
         </BasicLayout>
       </>
     );

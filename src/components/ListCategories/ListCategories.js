@@ -8,23 +8,24 @@ import Link from "next/link";
 export function ListCategories(props) {
   const { categories } = props;
 
+  const scale = "c_scale,f_auto,q_30,w_500/";
+  const upload = 'image/upload/';
+
   return (
     <div>
       <div className={styles.content}>
         <h4>CATEGORÍAS</h4>
         <div className={styles.list}>
-          {map(categories, (category) => (
-
-            <div key={category.id} className={styles.card}>
+        {map(categories, (category) => (
+          <div key={category.id} className={styles.card}>
+            {category.image ? (
               <Link href={`/products/${category.slug}`}>
-                <div className={styles.cardStyle}>
-                 
-                  <CardImg
-                    alt="Card image cap"
-                    src={BASE_NAME + category.image}
-                    className={styles.skeleton}
-                  />
-                </div>
+                <CardImg
+                  alt="Card image cap"
+                 src={BASE_NAME + upload +
+                    scale + category.image.split(upload)[1]}
+                  className={styles.skeleton}
+                />
                 <div className={styles.category}>
                   <CardTitle className={styles.title}>
                     <h2>{category.name}</h2>
@@ -32,11 +33,20 @@ export function ListCategories(props) {
                   </CardTitle>
                 </div>
               </Link>
-            </div>
+            ) : (
+              <Link href={`/products/${category.slug}`}>
+                <CardImg alt="Card image cap" src={category.image_alterna} />
 
-
-
-          ))}
+                <div className={styles.category}>
+                  <CardTitle className={styles.title}>
+                    <h2>{category.name}</h2>
+                    <h6>ver más</h6>
+                  </CardTitle>
+                </div>
+              </Link>
+            )}
+          </div>
+        ))}
         </div>
       </div>
     </div>

@@ -1,64 +1,44 @@
 .list {
-  padding: 0.5rem;
-  background-color: #ebebeb;
-  width: 100dvw;
+  h4 {
+    border-radius: 0.3rem;
+    background-color: #fd384f;
+    margin-top: 1rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
   .card {
-    background-color: rgb(246, 245, 245);
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-      -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-    border: solid 5px white;
     display: flex;
     margin: 0.5rem;
-    border-radius: 0.5rem;
-    justify-content: space-between;
 
     .detalle {
-      position: relative;
       width: 100%;
-      align-items: flex-start;
-      padding: 0.5rem;
-
       .btnDelete {
-        position: absolute;
-        top: 0;
-        right: 3.5px;
-        background: none;
-        border: none;
         cursor: pointer;
-        font-size: 20px;
-        background-color: #5252521b;
-        border-radius: 2rem;  
-
-        svg {
-          margin: 0px;
-          
-        }
+        background-color: rgb(255, 255, 255);
       }
-     
+
       .name {
-        max-width: 10rem;
         text-transform: uppercase;
-        font-weight: 600;
-        font-size: 1rem;
-        color: rgb(8, 1, 137);
-        //  line-height: 1.8125rem;
-        //  font-family: Poppins, BlinkMacSystemFont, Roboto, sans-serif;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: unset;
+        font-size: 0.7rem; 
+        color: rgb(133, 132, 132);
+
       }
       .price {
-        font-size: 12px;
-        color: rgb(128, 151, 178);
+        font-size: 1em;
+        color: #fd384f;
+        font-weight: 600;
       }
     }
     .btn {
       display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      
+      justify-content: space-between;
+      span {
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+
       p {
         font-size: 18px;
         font-weight: 600;
@@ -68,11 +48,13 @@
     }
 
     img {
-      width: 7rem;
-      max-height: 7rem;
+      max-width: 5rem;
+      max-height: 5rem;
       object-fit: cover;
       object-position: center center;
       border-radius: 0.5rem;
+      aspect-ratio: 1/1;
+      margin-right: 1rem;
     }
   }
 }
