@@ -28,8 +28,8 @@ export function ListCategories(props) {
                 />
                 <div className={styles.category}>
                   <CardTitle className={styles.title}>
-                    <h2>{category.name}</h2>
-                    <h6>ver más</h6>
+                    <h6>{category.name}</h6>
+                  
                   </CardTitle>
                 </div>
               </Link>

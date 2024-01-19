@@ -137,9 +137,9 @@ export function DetailProduct(props) {
 
             <div className={styles.description}>
               <CardTitle className={styles.title}>
-                <h5 className={styles.name_extend}>
+                <label className={styles.name_extend}>
                   {productData?.name_extend}
-                </h5>
+                </label>
                 <div className={styles.price}>
                   {productData?.price1 > 1 && (
                     <h5>Mayor $ {format(productData.price2)} </h5>
