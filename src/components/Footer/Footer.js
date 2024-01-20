@@ -50,11 +50,11 @@ export function Footer() {
       </div>
       <div>
         <p className={styles.copyright}>
-        NACIOTEX DISTRIBUIDORA Copyright © 2023. Todos los derechos
+        NACIOTEX DISTRIBUIDORA Copyright © 2024. Todos los derechos
           reservados <br />
           Desarrollado por: Jeffer Quiñones <br />
           Cel: 300 530 9990
-          Versión 6.0.1
+          Versión 6.0.2
         </p>
       </div>
     </div>

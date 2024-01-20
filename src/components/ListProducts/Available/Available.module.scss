@@ -1,14 +1,13 @@
 .list__product {
-
+background-color: rgb(255, 255, 255);
+border-radius: 0.5rem;
   button {
     width: 95% !important;
     background-color: #ffd814;
     border: none;
     color: #36404b;
     margin-bottom: 0.5rem;
-    -webkit-box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.19);
-    box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.19);
+  
     font-size: 0.9em;
   }
 
@@ -22,13 +21,14 @@
   h5 {
     text-transform: uppercase;
     font-size: 1rem;
+    font-weight: 900;
   }
 
   .price {
     label {
       font-weight: 800;
       font-size: 0.9rem;
-      color: #fd384f;
+      color: #f91477;
     }
   }
 }
