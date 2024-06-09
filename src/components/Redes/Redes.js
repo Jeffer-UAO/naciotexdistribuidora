@@ -33,9 +33,8 @@ export function Redes() {
         <p>Ventas por Mayor y Detal</p>
         <p>CARRERA 8 # 16 - 63 Centro</p>
         <p>Whatsapp: 310 655 6056</p>
-        
       </div>
-{/* 
+      {/* 
       <div
         className={`${styles.sticky_div} ${isVisible ? styles.visible : ""}`}
         style={{
