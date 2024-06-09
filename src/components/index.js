@@ -15,3 +15,4 @@ export * from "./ListCart";
 export * from "./FooterCart";
 export * from "./SearchTable";
 export * from "./Redes";
+export * from "./ListVideos";
