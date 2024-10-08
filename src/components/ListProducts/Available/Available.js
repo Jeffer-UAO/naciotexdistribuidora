@@ -79,6 +79,9 @@ export function Available(props) {
           {product.productData.price1 > 0 && (
             <label>Al detal $ {format(product.productData.price1)}</label>
           )}
+          {product.productData.price2 > 0 && (
+            <label>Por mayor $ {format(product.productData.price2)}</label>
+          )}
         </div>
       </div>
 

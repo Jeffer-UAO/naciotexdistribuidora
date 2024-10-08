@@ -51,34 +51,36 @@ export function Search(props) {
                   <CardTitle className={styles.title}>
                     <p>{product.name_extend}</p>
 
-                    {product.price2 !== null && (
-                      <h6>$ {format(product.price2)}</h6>
-                    )}
                     {product.price1 !== null && (
                       <h6>$ {format(product.price1)}</h6>
                     )}
+                    {product.price2 !== null && (
+                      <h6>$ {format(product.price2)}</h6>
+                    )}
+                    
 
                   </CardTitle>
                 </div>
               </Link>
             </div>
           ) : (
-            <div key={index} className={styles.list__soldout}>
-              {product.images ? (
-                <CardImg
-                  alt="Card image cap"
-                  src={BASE_NAME + product.images}
-                />
-              ) : (
-                <CardImg alt="Card image cap" src={product.image_alterna} />
-              )}
-              <div className={styles.product}>
-                <CardTitle className={styles.title}>
-                  <p>{product.name_extend}</p>
-                  <h6>AGOTADO</h6>
-                </CardTitle>
-              </div>
-            </div>
+            <></>
+            // <div key={index} className={styles.list__soldout}>
+            //   {product.images ? (
+            //     <CardImg
+            //       alt="Card image cap"
+            //       src={BASE_NAME + product.images}
+            //     />
+            //   ) : (
+            //     <CardImg alt="Card image cap" src={product.image_alterna} />
+            //   )}
+            //   <div className={styles.product}>
+            //     <CardTitle className={styles.title}>
+            //       <p>{product.name_extend}</p>
+            //       <h6>AGOTADO</h6>
+            //     </CardTitle>
+            //   </div>
+            // </div>
           )
         )}
       </div>

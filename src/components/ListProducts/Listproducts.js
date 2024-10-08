@@ -17,7 +17,8 @@ export function Listproducts(props) {
                 {!product.productData.soldout ? (
                   <Available key={index} product={product} />
                 ) : (
-                  <SoldOut kay={index} product={product} />
+                  <></>
+                  // <SoldOut kay={index} product={product} />
                 )}
               </>
             )}
