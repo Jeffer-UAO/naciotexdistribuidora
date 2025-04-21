@@ -37,7 +37,6 @@ export function FooterApp() {
     );
 
     window.location.href = whatsappLink;
-
     toggleModal();
   };
 

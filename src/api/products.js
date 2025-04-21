@@ -31,19 +31,22 @@ export class Products {
   }
 
   async getProductsByCategory(idCategory) {
-    try {
-      const productsFilter = `category=${idCategory}`;
 
-      const url = `${BASE_API}/api/product_category/?${productsFilter}`;
-      const response = await fetch(url);
-      const result = await response.json();
+    console.log(idCategory);
+    
+    // try {
+    //   const productsFilter = `category=${idCategory}`;
 
-      if (response.status !== 200) throw result;
+    //   const url = `${BASE_API}/api/product_category/?${productsFilter}`;
+    //   const response = await fetch(url);
+    //   const result = await response.json();
 
-      return result;
-    } catch (error) {
-      throw error;
-    }
+    //   if (response.status !== 200) throw result;
+
+    //   return result;
+    // } catch (error) {
+    //   throw error;
+    // }
   }
 
   async getProductBySlug(slug) {

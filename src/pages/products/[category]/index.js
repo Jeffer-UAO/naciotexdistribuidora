@@ -15,6 +15,28 @@ export async function getServerSideProps(context) {
     responseCategory.id
   );
 
+
+  if (!responseCategory) {
+    return {
+      notFound: true,
+    };
+  }
+
+  if (!responseProduct) {
+    return {
+      notFound: true,
+    };
+  }
+  if (responseProduct.length === 0) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+  
+
   return {
     props: {
       category: responseCategory,

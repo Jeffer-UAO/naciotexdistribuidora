@@ -23,6 +23,9 @@ export function FooterCart(props) {
   const { items, selectedItem, seller, handleItemClick } = useWhatsApp();
   const router = useRouter();
 
+console.log("Q------Q", product);
+
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
@@ -54,6 +57,15 @@ export function FooterCart(props) {
     toggleModal();
   };
 
+
+  const validateActive = () => {
+    
+    console.log("Q---1---Q");
+    toggleModal()
+    
+  };
+
+
   return (
     <div className={styles.btnWhatsapp}>
       <div className={styles.paneluser}>
@@ -62,7 +74,7 @@ export function FooterCart(props) {
         <Button
           className={styles.whatsapp}
           color="succefull"
-          onClick={() => toggleModal()}
+          onClick={() => validateActive()}
         >
           <BsWhatsapp size={30} color="green" />
           <p>Enviar Listado</p>
@@ -72,7 +84,7 @@ export function FooterCart(props) {
       </div>
 
       <Modal centered isOpen={isOpen} toggle={toggleModal}>
-        <ModalHeader toggle={toggleModal}>Seleccione una Linea</ModalHeader>
+        <ModalHeader toggle={toggleModal}>Seleccione un accesor</ModalHeader>
 
         <ModalBody>
           {items.map((item, index) => (

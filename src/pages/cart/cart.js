@@ -35,9 +35,6 @@ export default function CartPage() {
   }, [cart]);
 
 
-
-
-
   useEffect(() => {
     (async () => {
       try {
@@ -49,14 +46,15 @@ export default function CartPage() {
           for (const key in record) {
             if (
               Object.hasOwnProperty.call(record, key) &&
-              ["name_extend", "quantity", "images", "ref"].includes(key)
+              ["codigo", "name_extend", "quantity", "images", "ref"].includes(key)
             ) {
               newRecord[key] = record[key];
             }
           }
 
-          newObjectArray.push({         
-           Producto: newRecord.name_extend,
+          newObjectArray.push({
+            codigo: newRecord.codigo,
+            Producto: newRecord.name_extend,
             Referencia: newRecord.ref,
             Cantidad: newRecord.quantity,
             Imagen: BASE_NAME + newRecord.images,          
@@ -70,6 +68,7 @@ export default function CartPage() {
       }
     })();
   }, [product]);
+
 
   return (
     <>
