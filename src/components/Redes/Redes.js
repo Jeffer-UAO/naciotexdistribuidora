@@ -32,7 +32,7 @@ export function Redes() {
       <div className={styles.redes}>
         <p>Ventas por Mayor y Detal</p>
         <p>CARRERA 8 # 16 - 63 Centro</p>
-        <p>Whatsapp: 310 655 6056</p>
+        <p>Whatsapp: 312 574 1767</p>
       </div>
       {/* 
       <div
